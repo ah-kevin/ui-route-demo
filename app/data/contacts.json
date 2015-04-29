@@ -1,0 +1,47 @@
+{
+  "contacts":[
+    {
+      "id": 1,
+      "name": "kevin",
+      "items": [
+        {
+          "id": "a",
+          "type": "phone number",
+          "value": "133-2342-2342"
+        },
+        {
+          "id": "b",
+          "type": "email",
+          "value": "qweqwe@qq.com"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "lennon",
+      "items": [
+        {
+          "id": "a",
+          "type": "blog",
+          "value": "http://www.hf520.com"
+        },
+        {
+          "id": "b",
+          "type": "phone",
+          "value": "133-9999-9999"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "name": "sb",
+      "items": [
+        {
+          "id": "a",
+          "type": "full name",
+          "value": "你是大SB"
+        }
+      ]
+    }
+  ]
+}

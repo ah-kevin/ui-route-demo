@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" ng-app="uiRouterDemo">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ui route demo</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+</head>
+<body>
+<!--top begin-->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <a class="brand" ui-sref="home">ui-route</a>
+            <ul class="nav">
+                <li class="nav">
+                    <a ui-sref="contacts.list">Contacts</a>
+                </li>
+                <li class="nav" ui-sref-active="active">
+                    <a ui-sref="about">关于我</a>
+                </li>
+            </ul>
+
+            <!-- Here is a named ui-view. ui-views don't have to be named, but we'll populate this
+                 one from various different child states and we want a name to help us target. -->
+            <p class="navbar-text pull-right" ui-view="hint"></p>
+        </div>
+    </div>
+</div>
+<!--top end -->
+
+<!--主题main部分-->
+<div ui-view class="container slide" style="padding-top: 80px"></div>
+
+<hr>
+
+<!--底部监测区-->
+<pre>
+    $state = {{$state.current.name}}                         //(服务)用来显示当前路由的状态信息,以及一些路由的方法(如:跳转)
+    $stateParams = {{$stateParams}}                          //(服务)用来存储路由匹配时候的参数
+    $state full url = {{ $state.$current.url.source }}       //对应的url
+
+</pre>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="scripts/vendor/angular.js"></script>
+<script src="scripts/vendor/angular-ui-router.js"></script>
+<script src="scripts/vendor/angular-animate.js"></script>
+
+<script src="contacts/contacts.js"></script>
+<script src="contacts/contacts-service.js"></script>
+<script src="common/utils-service.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild -->
+</body>
+</html>
